@@ -1,8 +1,6 @@
 package com.mathproblemgenerator.app;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 public class QuizzerTest extends TestCase
 {

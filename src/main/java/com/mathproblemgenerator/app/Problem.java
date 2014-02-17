@@ -9,9 +9,9 @@ public class Problem
         expr = e;
     }
 
-	public Boolean solve(double result)
-	{
-		return expr.eval() == result;
-	}
+    public Boolean solve(double result)
+    {
+        return expr.eval() == result;
+    }
 }
 

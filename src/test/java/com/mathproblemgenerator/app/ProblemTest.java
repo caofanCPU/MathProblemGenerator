@@ -9,7 +9,9 @@ public class ProblemTest extends TestCase
      */
     public void testProblem()
     {
-        BinaryExpression e = new BinaryExpression("+", 1.0, 2.0);
+        BinaryExpression e = new BinaryExpression("+", 
+                                    new NumberExpression(1.0), 
+                                    new NumberExpression(2.0));
         Problem p = new Problem(e);
         assertTrue( p.solve(3.0) );
     }

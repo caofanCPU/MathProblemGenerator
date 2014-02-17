@@ -11,7 +11,7 @@ public class Problem
 
     public Boolean solve(double result)
     {
-        return expr.eval() == result;
+        return expr.eval().doubleValue() == result;
     }
 }
 

@@ -2,42 +2,44 @@ package com.mathproblemgenerator.app;
 
 import java.text.DecimalFormat;
 
-public class BinaryExpression
+public class BinaryExpression extends Expression
 {
     private String operator;
-    private double leftOperand;
-    private double rightOperand;
+    private NumberExpression leftOperand;
+    private NumberExpression rightOperand;
 
-    public BinaryExpression(String op, double left, double right)
+    public BinaryExpression(String op, NumberExpression left, NumberExpression right)
     {
         leftOperand = left;
         rightOperand = right;
         operator = op;
     }
 
+    @Override
     public String toString()
     {
-        DecimalFormat df = new DecimalFormat("#.##");
-
-        return String.format("%s %s %s", df.format(leftOperand), 
+        return String.format("%s %s %s", leftOperand.toString(),
                                          operator, 
-                                         df.format(rightOperand));
+                                         rightOperand.toString());
     }
 
-    public double eval()
+    @Override
+    public Double eval()
     {
-        double result = Double.NaN;
+        NumberExpression result;
 
         if(operator == "+") {
-            result = leftOperand + rightOperand;
+            result = leftOperand.add(rightOperand);
         } else if (operator == "-") {
-            result = leftOperand - rightOperand;
+            result = leftOperand.subtract(rightOperand);
         } else if (operator == "*") {
-            result = leftOperand * rightOperand;
+            result = leftOperand.multiply(rightOperand);
         } else if (operator == "/") {
-            result = leftOperand / rightOperand;
+            result = leftOperand.divide(rightOperand);
+        } else {
+            result = new NumberExpression(Double.NaN);
         }
 
-        return result;
+        return result.eval();
     }
 }

@@ -2,11 +2,16 @@ package com.mathproblemgenerator.app;
 
 public class Problem
 {
-    private Expresion expr;
+    private BinaryExpression expr;
 
-    public Problem(Expression e)
+    public Problem(BinaryExpression e)
     {
         expr = e;
     }
+
+	public Boolean solve(double result)
+	{
+		return expr.eval() == result;
+	}
 }
 

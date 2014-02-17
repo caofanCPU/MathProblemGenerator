@@ -2,7 +2,7 @@ package com.mathproblemgenerator.app;
 
 import java.text.DecimalFormat;
 
-class BinaryExpression
+public class BinaryExpression
 {
     private String operator;
     private double leftOperand;
@@ -17,9 +17,11 @@ class BinaryExpression
 
     public String toString()
     {
-        DecimalFormat df = new DecimalFormat("0.00#");
+        DecimalFormat df = new DecimalFormat("#.##");
 
-        return String.format("%s %s %s", leftOperand, operator, rightOperand);
+        return String.format("%s %s %s", df.format(leftOperand), 
+                                         operator, 
+                                         df.format(rightOperand));
     }
 
     public double eval()

@@ -11,9 +11,9 @@ public class BinaryExpressionTest extends TestCase
      */
     public void testBinaryExpression()
     {
-    	BinaryExpression binexp = new BinaryExpression("+", 1, -1);
-    	assertEquals(binexp.toString(), "1 - 1");
-    	assertEquals(binexp.eval(), 0.0);
+        BinaryExpression binexp = new BinaryExpression("-", 1, 1);
+        assertEquals(binexp.toString(), "1 - 1");
+        assertEquals(binexp.eval(), 0.0);
     }
 }
 
